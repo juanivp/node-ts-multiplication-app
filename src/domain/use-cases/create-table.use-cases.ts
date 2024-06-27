@@ -22,7 +22,9 @@ export class CreateTable implements CreateTableUseCase {
 
         let outputMessage = '';
         for (let i = 1; i <= limit; i++) {
-            outputMessage += `${ base } x ${ i } = ${ base * i}\n`;
+            outputMessage += `${ base } x ${ i } = ${ base * i}`;
+            //agrego un salto de linea en todas menos en la ultima
+            if ( i < limit ) outputMessage += '\n';
         };
 
         return outputMessage;
