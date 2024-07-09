@@ -3,7 +3,7 @@
 //yargs es un paquete que sive para procesar los argument values
 // console.log(process.argv)   
 
-import { yarg } from '../src/config/plugins/yargs.plugin';
+import { yarg } from './config/plugins/args.plugin';
 import { ServerApp } from './presentation/server-app';
 // Por defecto en Node todo lo que se ejecuta en nuestro archivo principal es sincrono. Si necesito ejecutar tarea asincrona en el root de nuestra aplicacion debo ejecutar una funcion anonima autoinvocada asincrona como la siguiente:
 (async() => {

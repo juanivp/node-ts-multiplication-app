@@ -63,7 +63,7 @@ describe( 'SaveFileUseCase' , () => {
     test('should return false if directory counld not be created', () => { 
         
         const saveFile = new SaveFile();
-        //creo un espia de jest  que va a espiar al metodo mkdirSync. Hasta ahi me serviria para saber si la funcion fue llamada y con que argumentos, etc. Pero ademas vamos a aplicarle un .mockImplementacion, lo cual reescribe su funcionalidad. De esta manera, cuando se llame al metodo fs.mkdirSync va a tirar un nuevo error y de esa manera puedo hacer el testing necesario. Los mockImplementations persisten sobre las pruebas siguientes, con lo cual debo borrarlos al terminar este test en caso de no necesitarlo.
+        //creo un espia de jest  que va a espiar al metodo mkdirSync. Hasta ahi me serviria para saber si la funcion fue llamada y con que argumentos, etc. Pero ademas vamos a aplicarle un .mockImplementacion, lo cual reescribe su funcionalidad. De esta manera, cuando se llame al metodo fs.mkdirSync va a tirar un nuevo error que me permitira hacer el testing necesario. Los mockImplementations persisten sobre las pruebas siguientes, con lo cual debo borrarlos al terminar este test en caso de no necesitarlo.
         const mkdirSpy = jest.spyOn(fs, 'mkdirSync').mockImplementation(
             () => { throw new Error('This is a custom error message from testing') }
         );
